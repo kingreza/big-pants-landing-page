@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Big Pants Apps — Small Apps. Big Usefulness.</title>
+<meta name="description" content="Big Pants Apps is an independent studio making focused mobile apps for tracking, training, learning, and everyday utility." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --teal: #335C67;
+  --custard: #FFF3B0;
+  --bronze: #E09F3E;
+  --red: #9E2A2B;
+  --cherry: #540B0E;
+
+  --bg: #FFF9DD;
+  --card-bg: #FFFCED;
+  --ink: #2A1818;
+  --ink-muted: #6A5552;
+  --border: rgba(84, 11, 14, 0.14);
+  --border-strong: rgba(84, 11, 14, 0.28);
+
+  --cta-bg: var(--bronze);
+  --cta-fg: var(--ink);
+  --cta-bg-hover: var(--red);
+  --cta-fg-hover: var(--custard);
+
+  --serif: "Fraunces", ui-serif, Georgia, serif;
+  --sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { color: var(--red); }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+}
+.site-header .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--teal);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: var(--teal);
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--custard);
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.18);
+}
+.brand-mark::before {
+  /* pocket stitch detail */
+  content: "";
+  position: absolute;
+  left: 7px; right: 7px; top: 18px;
+  height: 8px;
+  border: 1px dashed rgba(255, 243, 176, 0.55);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav a {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 15px;
+}
+.nav a:hover { color: var(--teal); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cta-bg);
+  color: var(--cta-fg);
+  border-color: rgba(84,11,14,0.18);
+  box-shadow: 0 1px 0 rgba(84,11,14,0.18);
+}
+.btn-primary:hover {
+  background: var(--cta-bg-hover);
+  color: var(--cta-fg-hover);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--teal);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  background: rgba(51,92,103,0.06);
+  color: var(--teal);
+}
+.btn-sm { padding: 8px 14px; font-size: 14px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 72px 0 56px;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  background: rgba(51,92,103,0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--bronze);
+}
+h1.hero-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1.04;
+  margin: 0 0 20px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+h1.hero-title .accent {
+  color: var(--teal);
+  font-style: italic;
+  font-weight: 500;
+}
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  margin: 0 0 32px;
+  max-width: 520px;
+}
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+}
+.hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-meta .pip {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal);
+}
+
+/* Hero visual: stacked app tiles */
+.hero-stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 460px;
+  margin-left: auto;
+}
+.tile {
+  position: absolute;
+  width: 62%;
+  aspect-ratio: 1 / 1;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 8px 24px rgba(84,11,14,0.10),
+    0 2px 6px rgba(84,11,14,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  overflow: hidden;
+}
+.tile-1 { /* Pregnancy Tracker — teal */
+  top: 0; left: 0;
+  background: var(--teal);
+  color: var(--custard);
+  transform: rotate(-6deg);
+}
+.tile-2 { /* Blackjack — cherry */
+  top: 22%; left: 38%;
+  background: var(--cherry);
+  color: var(--custard);
+  transform: rotate(4deg);
+  z-index: 2;
+}
+.tile-3 { /* Flash Sign — bronze */
+  top: 50%; left: 6%;
+  background: var(--bronze);
+  color: var(--cherry);
+  transform: rotate(-2deg);
+  z-index: 1;
+}
+.tile-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.tile-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.tile-glyph {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 84px;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  align-self: flex-start;
+}
+.tile-1 .tile-glyph { color: var(--custard); }
+.tile-2 .tile-glyph { color: var(--bronze); }
+.tile-3 .tile-glyph { color: var(--cherry); }
+
+/* ---------- Section chrome ---------- */
+section { padding: 72px 0; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(32px, 3.6vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
+}
+.section-head p {
+  margin: 0;
+  font-size: 17px;
+  color: var(--ink-muted);
+  max-width: 560px;
+}
+.section-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+/* ---------- Apps grid ---------- */
+.apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.app-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.app-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 6px 20px rgba(84,11,14,0.06);
+}
+.app-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 64px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 2px 6px rgba(84,11,14,0.10);
+  position: relative;
+}
+.app-icon-1 { background: var(--teal); color: var(--custard); }
+.app-icon-2 { background: var(--cherry); color: var(--custard); }
+.app-icon-3 { background: var(--bronze); color: var(--cherry); }
+
+.app-meta-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.app-meta-cat {
+  margin: 4px 0 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.app-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.app-foot {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.badge .pip {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--bronze);
+}
+.app-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+  white-space: nowrap;
+}
+.app-link:hover { color: var(--red); }
+.app-link svg { transition: transform 160ms ease; }
+.app-link:hover svg { transform: translateX(2px); }
+
+/* ---------- About + Support split ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.split-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.split-card.feature {
+  background: var(--teal);
+  color: var(--custard);
+  border-color: var(--teal);
+}
+.split-card.feature .section-tag { color: var(--bronze); }
+.split-card.feature h3 { color: var(--custard); }
+.split-card.feature p { color: rgba(255, 243, 176, 0.85); }
+.split-card.feature a { color: var(--bronze); }
+.split-card.feature a:hover { color: var(--custard); }
+
+.split-card h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.split-card p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+.split-card .actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.split-card .actions a {
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--cherry);
+  color: var(--custard);
+  padding: 56px 0 36px;
+  margin-top: 24px;
+}
+.site-footer a { color: var(--custard); }
+.site-footer a:hover { color: var(--bronze); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-brand .brand { color: var(--custard); }
+.footer-brand .brand-mark { background: var(--bronze); color: var(--cherry); }
+.footer-brand .brand-mark::before { border-color: rgba(84,11,14,0.45); }
+.footer-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,243,176,0.7);
+  margin-top: 4px;
+}
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--bronze);
+  margin: 0 0 14px;
+}
+.footer-col ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 10px;
+  font-size: 15px;
+}
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,243,176,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(255,243,176,0.55);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stack { max-width: 380px; margin: 0 auto; }
+  .apps { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .nav { display: none; }
+  .hero { padding: 48px 0 32px; }
+  section { padding: 48px 0; }
+  .apps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ---------- Tweaks-driven variants ---------- */
+body[data-bg="cream"] { --bg: #FFF9DD; }
+body[data-bg="butter"] { --bg: #FFF7CF; }
+body[data-bg="ivory"] { --bg: #FFFCED; }
+
+body[data-cta="bronze"] { --cta-bg: #E09F3E; --cta-fg: #2A1818; --cta-bg-hover: #9E2A2B; --cta-fg-hover: #FFF3B0; }
+body[data-cta="cherry"] { --cta-bg: #540B0E; --cta-fg: #FFF3B0; --cta-bg-hover: #9E2A2B; --cta-fg-hover: #FFF3B0; }
+body[data-cta="teal"]   { --cta-bg: #335C67; --cta-fg: #FFF3B0; --cta-bg-hover: #9E2A2B; --cta-fg-hover: #FFF3B0; }
+
+/* Typographic hero (no tile stack) */
+body[data-hero="type"] .hero-grid { grid-template-columns: 1fr; }
+body[data-hero="type"] .hero-stack { display: none; }
+body[data-hero="type"] h1.hero-title { font-size: clamp(56px, 8vw, 96px); max-width: 900px; }
+body[data-hero="type"] .hero-sub { max-width: 640px; font-size: 19px; }
+
+/* Solid card variant (more emphatic colored cards) */
+body[data-cards="solid"] .app-card-1 { background: var(--teal); color: var(--custard); border-color: var(--teal); }
+body[data-cards="solid"] .app-card-1 .app-meta-cat,
+body[data-cards="solid"] .app-card-1 .badge { color: var(--bronze); }
+body[data-cards="solid"] .app-card-1 .app-desc { color: rgba(255,243,176,0.85); }
+body[data-cards="solid"] .app-card-1 .app-link { color: var(--bronze); }
+body[data-cards="solid"] .app-card-1 .app-foot { border-top-color: rgba(255,243,176,0.2); }
+body[data-cards="solid"] .app-card-1 .app-icon { background: var(--bronze); color: var(--cherry); }
+</style>
+</head>
+<body data-bg="cream" data-cta="bronze" data-hero="stack" data-cards="bordered">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container row">
+    <a href="#" class="brand" aria-label="Big Pants Apps home">
+      <span class="brand-mark" aria-hidden="true">BP</span>
+      <span>Big Pants Apps</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+      <a href="#support" class="btn btn-ghost btn-sm">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Independent app studio · Est. 2024</span>
+      <h1 id="hero-title" class="hero-title">
+        Small apps.<br />
+        <span class="accent">Big usefulness.</span>
+      </h1>
+      <p class="hero-sub">
+        We make focused mobile tools for everyday moments — the kind you can open quickly,
+        understand instantly, and keep using because they do one job well.
+      </p>
+      <div class="hero-cta">
+        <a href="#apps" class="btn btn-primary">Browse apps
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#support" class="btn btn-ghost">Get support</a>
+      </div>
+      <div class="hero-meta">
+        <span><span class="pip"></span>3 apps available</span>
+        <span><span class="pip"></span>iPhone</span>
+        <span><span class="pip"></span>Made by humans</span>
+      </div>
+    </div>
+
+    <div class="hero-stack" aria-hidden="true">
+      <div class="tile tile-1">
+        <div class="tile-glyph">P</div>
+        <div>
+          <div class="tile-name">Pregnancy<br />Tracker</div>
+          <div class="tile-foot" style="margin-top:10px;"><span>Health</span><span>01</span></div>
+        </div>
+      </div>
+      <div class="tile tile-2">
+        <div class="tile-glyph">21</div>
+        <div>
+          <div class="tile-name">Blackjack<br />Trainer</div>
+          <div class="tile-foot" style="margin-top:10px;"><span>Training</span><span>02</span></div>
+        </div>
+      </div>
+      <div class="tile tile-3">
+        <div class="tile-glyph">!</div>
+        <div>
+          <div class="tile-name">Flash Sign</div>
+          <div class="tile-foot" style="margin-top:10px;"><span>Utility</span><span>03</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPS ============ -->
+<section id="apps" aria-labelledby="apps-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">— 01 / The catalog</div>
+        <h2 id="apps-title">Our apps</h2>
+        <p>Three focused tools, each built around a simple promise: open the app, do the thing, move on with your day.</p>
+      </div>
+    </div>
+
+    <div class="apps">
+      <article class="app-card app-card-1">
+        <div class="app-card-top">
+          <div class="app-icon app-icon-1" aria-hidden="true">P</div>
+          <div>
+            <h3 class="app-meta-name">Pregnancy Tracker</h3>
+            <p class="app-meta-cat">Health &amp; Family</p>
+          </div>
+        </div>
+        <p class="app-desc">A calm, easy pregnancy tracker for following milestones, dates, and weekly progress without medical noise.</p>
+        <div class="app-foot">
+          <span class="badge"><span class="pip"></span>iPhone</span>
+          <a href="#" class="app-link">View on the App Store
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="app-card app-card-2">
+        <div class="app-card-top">
+          <div class="app-icon app-icon-2" aria-hidden="true">21</div>
+          <div>
+            <h3 class="app-meta-name">Blackjack Trainer</h3>
+            <p class="app-meta-cat">Games &amp; Training</p>
+          </div>
+        </div>
+        <p class="app-desc">Practice blackjack decisions and sharpen your basic strategy one hand at a time, with fast feedback.</p>
+        <div class="app-foot">
+          <span class="badge"><span class="pip"></span>iPhone</span>
+          <a href="#" class="app-link">View on the App Store
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="app-card app-card-3">
+        <div class="app-card-top">
+          <div class="app-icon app-icon-3" aria-hidden="true">!</div>
+          <div>
+            <h3 class="app-meta-name">Flash Sign</h3>
+            <p class="app-meta-cat">Utilities</p>
+          </div>
+        </div>
+        <p class="app-desc">Turn your phone into a bright, readable sign when you need to get a message seen across a crowd.</p>
+        <div class="app-foot">
+          <span class="badge"><span class="pip"></span>iPhone</span>
+          <a href="#" class="app-link">View on the App Store
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT + SUPPORT ============ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="split">
+      <div class="split-card feature">
+        <div class="section-tag">— 02 / About the studio</div>
+        <h3 id="about-title">Built small on purpose.</h3>
+        <p>
+          Big Pants Apps is an independent studio with a soft spot for practical tools.
+          We build apps around clear jobs, tidy interfaces, and the belief that useful
+          software does not need to be overstuffed.
+        </p>
+        <p style="font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--custard); margin-top: 4px;">
+          The name is playful. The work is careful.
+        </p>
+      </div>
+
+      <div class="split-card" id="support">
+        <div class="section-tag">— 03 / Support</div>
+        <h3>Questions, bugs, or app support.</h3>
+        <p>
+          Tell us which app you are using and what you need help with. We read support
+          messages and use them to make the apps better.
+        </p>
+        <div class="actions">
+          <a href="mailto:hello@bigpantsapps.com">Email support →</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of use</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">BP</span>
+          <span>Big Pants Apps</span>
+        </div>
+        <p class="footer-tag">Small apps. Big usefulness.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="#">Pregnancy Tracker</a></li>
+          <li><a href="#">Blackjack Trainer</a></li>
+          <li><a href="#">Flash Sign</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="mailto:hello@bigpantsapps.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Big Pants Apps. All rights reserved.</span>
+      <span>Made with care, not fuss.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ TWEAKS ============ -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<div id="tweaks-root"></div>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "bg": "cream",
+  "cta": "bronze",
+  "hero": "stack",
+  "cards": "bordered"
+}/*EDITMODE-END*/;
+
+function TweaksApp() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const b = document.body;
+    b.dataset.bg = t.bg;
+    b.dataset.cta = t.cta;
+    b.dataset.hero = t.hero;
+    b.dataset.cards = t.cards;
+  }, [t]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection title="Page background">
+        <TweakRadio
+          value={t.bg}
+          onChange={v => setTweak('bg', v)}
+          options={[
+            {value: 'cream', label: 'Cream'},
+            {value: 'butter', label: 'Butter'},
+            {value: 'ivory', label: 'Ivory'},
+          ]}
+        />
+      </TweakSection>
+
+      <TweakSection title="Primary CTA">
+        <TweakRadio
+          value={t.cta}
+          onChange={v => setTweak('cta', v)}
+          options={[
+            {value: 'bronze', label: 'Bronze'},
+            {value: 'cherry', label: 'Cherry'},
+            {value: 'teal', label: 'Teal'},
+          ]}
+        />
+      </TweakSection>
+
+      <TweakSection title="Hero treatment">
+        <TweakRadio
+          value={t.hero}
+          onChange={v => setTweak('hero', v)}
+          options={[
+            {value: 'stack', label: 'Tile stack'},
+            {value: 'type', label: 'Typographic'},
+          ]}
+        />
+      </TweakSection>
+
+      <TweakSection title="App cards">
+        <TweakRadio
+          value={t.cards}
+          onChange={v => setTweak('cards', v)}
+          options={[
+            {value: 'bordered', label: 'Bordered'},
+            {value: 'solid', label: 'Featured'},
+          ]}
+        />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('tweaks-root'));
+root.render(<TweaksApp />);
+</script>
+
+</body>
+</html>
