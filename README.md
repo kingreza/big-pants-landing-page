@@ -7,6 +7,7 @@ Static marketing site for Big Pants Apps.
 - `index.html`: studio homepage.
 - `flash-sign.html`: Flash Sign Banner product page.
 - `flash-sign-support.html`: Flash Sign Banner support page.
+- `flash-sign-privacy.html`: Flash Sign Banner privacy policy.
 
 ## Contact
 
