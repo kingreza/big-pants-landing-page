@@ -641,6 +641,10 @@ h3 {
   gap: 16px;
 }
 
+.support-screenshot-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .screenshot-card {
   margin: 0;
   padding: 10px;
