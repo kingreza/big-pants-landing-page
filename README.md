@@ -8,6 +8,8 @@ Static marketing site for Big Pants Apps.
 - `flash-sign.html`: Flash Sign Banner product page.
 - `flash-sign-support.html`: Flash Sign Banner support page.
 - `flash-sign-privacy.html`: Flash Sign Banner privacy policy.
+- `robots.txt`: crawler access policy and sitemap pointer.
+- `sitemap.xml`: canonical URL list for search engines.
 
 ## Contact
 
