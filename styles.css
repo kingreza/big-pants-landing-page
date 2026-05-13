@@ -271,6 +271,19 @@ h3 {
   content: "";
 }
 
+.store-placeholder {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px dashed rgba(43, 48, 62, 0.24);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 .studio-visual {
   position: relative;
   min-height: 440px;

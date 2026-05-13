@@ -17,6 +17,11 @@ Static marketing site for Big Pants Apps.
 
 Use `info@bigpantsapps.com` for support, launch questions, and general contact.
 
+## Launch TODO
+
+- Replace the Pregnancy Growth Tracker App Store placeholder with the final App Store URL when available.
+- Replace the Blackjack Strategy Trainer App Store placeholder with the final App Store URL when available.
+
 ## Local Preview
 
 Open `index.html` in a browser, or serve this folder with any static file server.
