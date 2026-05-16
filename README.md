@@ -7,12 +7,12 @@ Static marketing site for Big Pants Apps.
 - `index.html`: studio homepage.
 - `flash-sign.html`: Flash Sign Banner product page.
 - `pregnancy.html`: Pregnancy Growth Tracker product page.
-- `blackjack-trainer.html`: Blackjack Strategy Trainer product page.
+- `blackjack-trainer.html`: Blackjack Drill Trainer product page.
 - `flash-sign-support.html`: Flash Sign Banner support page.
 - `pregnancy-support.html`: Pregnancy Growth Tracker support page.
-- `blackjack-trainer-support.html`: Blackjack Strategy Trainer support page.
-- `blackjack-trainer-privacy.html`: Blackjack Strategy Trainer privacy policy.
-- `blackjack-trainer-privacy-*.html`: localized Blackjack Strategy Trainer privacy policies.
+- `blackjack-trainer-support.html`: Blackjack Drill Trainer support page.
+- `blackjack-trainer-privacy.html`: Blackjack Drill Trainer privacy policy.
+- `blackjack-trainer-privacy-*.html`: localized Blackjack Drill Trainer privacy policies.
 - `flash-sign-privacy.html`: Flash Sign Banner privacy policy.
 - `pregnancy-privacy.html`: Pregnancy Growth Tracker privacy policy.
 - `pregnancy-privacy-*.html`: localized Pregnancy Growth Tracker privacy policies.
@@ -26,7 +26,7 @@ Use `info@bigpantsapps.com` for support, launch questions, and general contact.
 ## Launch TODO
 
 - Replace the Pregnancy Growth Tracker App Store placeholder with the final App Store URL when available.
-- Replace the Blackjack Strategy Trainer App Store placeholder with the final App Store URL when available.
+- Replace the Blackjack Drill Trainer App Store placeholder with the final App Store URL when available.
 
 ## Local Preview
 
