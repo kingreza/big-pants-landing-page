@@ -11,6 +11,8 @@ Static marketing site for Big Pants Apps.
 - `flash-sign-support.html`: Flash Sign Banner support page.
 - `pregnancy-support.html`: Pregnancy Growth Tracker support page.
 - `blackjack-trainer-support.html`: Blackjack Strategy Trainer support page.
+- `blackjack-trainer-privacy.html`: Blackjack Strategy Trainer privacy policy.
+- `blackjack-trainer-privacy-*.html`: localized Blackjack Strategy Trainer privacy policies.
 - `flash-sign-privacy.html`: Flash Sign Banner privacy policy.
 - `pregnancy-privacy.html`: Pregnancy Growth Tracker privacy policy.
 - `pregnancy-privacy-*.html`: localized Pregnancy Growth Tracker privacy policies.
