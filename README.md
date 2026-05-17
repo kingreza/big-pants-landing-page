@@ -8,6 +8,7 @@ Static marketing site for Big Pants Apps.
 - `flash-sign.html`: Flash Sign Banner product page.
 - `pregnancy.html`: Pregnancy Growth Tracker product page.
 - `blackjack-trainer.html`: Blackjack Drill Trainer product page.
+- `what-am-i-eating.html`: What Am I Eating product page.
 - `flash-sign-support.html`: Flash Sign Banner support page.
 - `pregnancy-support.html`: Pregnancy Growth Tracker support page.
 - `blackjack-trainer-support.html`: Blackjack Drill Trainer support page.
@@ -25,8 +26,7 @@ Use `info@bigpantsapps.com` for support, launch questions, and general contact.
 
 ## Launch TODO
 
-- Replace the Pregnancy Growth Tracker App Store placeholder with the final App Store URL when available.
-- Replace the Blackjack Drill Trainer App Store placeholder with the final App Store URL when available.
+- Replace the What Am I Eating store link placeholder with final App Store and Google Play URLs when available.
 
 ## Local Preview
 

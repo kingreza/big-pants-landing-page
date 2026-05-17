@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What Am I Eating - Big Pants Apps</title>
+    <meta name="description" content="What Am I Eating is a barcode food scanner that explains packaged foods with product scores, nutrition context, ingredients, additives, allergens, and data-completeness warnings.">
+    <link rel="canonical" href="https://bigpantsapps.com/what-am-i-eating.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Big Pants Apps">
+    <meta property="og:title" content="What Am I Eating - Big Pants Apps">
+    <meta property="og:description" content="Scan packaged food barcodes and understand nutrition, ingredients, additives, allergens, and missing-data warnings with What Am I Eating.">
+    <meta property="og:url" content="https://bigpantsapps.com/what-am-i-eating.html">
+    <meta property="og:image" content="https://bigpantsapps.com/assets/what-am-i-eating-icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="What Am I Eating - Big Pants Apps">
+    <meta name="twitter:description" content="A barcode food scanner for nutrition context, ingredients, additives, allergens, and transparent product scores.">
+    <meta name="twitter:image" content="https://bigpantsapps.com/assets/what-am-i-eating-icon.png">
+    <link rel="stylesheet" href="styles.css?v=20260517">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://bigpantsapps.com/what-am-i-eating.html#app",
+        "name": "What Am I Eating",
+        "description": "What Am I Eating is a mobile barcode food scanner that helps explain packaged foods with product scores, nutrition context, ingredients, additives, allergens, and data-completeness warnings.",
+        "url": "https://bigpantsapps.com/what-am-i-eating.html",
+        "image": "https://bigpantsapps.com/assets/what-am-i-eating-icon.png",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, Android",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Big Pants Apps",
+          "url": "https://bigpantsapps.com/",
+          "email": "info@bigpantsapps.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://bigpantsapps.com/what-am-i-eating.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is What Am I Eating?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "What Am I Eating is a mobile barcode food scanner for packaged foods. It helps explain available product data, including a product score, nutrition context, ingredients, additives, allergens, and data-completeness warnings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the product data come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "What Am I Eating is built around Open Food Facts data served through our own backend. Open Food Facts is an open, user-contributed food product database, so records can vary by product and region."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is What Am I Eating using Yuka data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. What Am I Eating is an independent product scanner. It does not use Yuka data, and its product guidance is based on Open Food Facts data and our own transparent scoring rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can product data be missing or inaccurate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Product data can be incomplete, outdated, or user-contributed. The app is designed to show data-completeness warnings and explain when a score is based on limited available information."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the app give medical or nutrition advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. What Am I Eating is informational only and is not medical advice. People with allergies, medical conditions, dietary restrictions, pregnancy questions, or other health concerns should verify packaging and talk with a qualified professional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does What Am I Eating show additives and allergens?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, when available in the product record. The app can surface additive tags, conservative additive guidance labels, allergen tags, and ingredient text, but users should always check the package label for safety-critical decisions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if a barcode is not found?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app shows a product-not-found state instead of guessing. Users can also enter a barcode manually if scanning is difficult."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is What Am I Eating a calorie tracker or diet planner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The first version focuses on barcode lookup and product understanding. Meal tracking, diet plans, accounts, cloud sync, and medical recommendations are outside the MVP scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does What Am I Eating require an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No account is planned for the MVP. Recent scans, cached product data, and settings are designed to stay local on the device."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="flash-page food-page">
+    <header class="site-header">
+      <div class="shell nav-row">
+        <a class="brand" href="index.html" aria-label="Big Pants Apps home">
+          <span class="brand-mark">BP</span>
+          <span>Big Pants Apps</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html#apps">Apps</a>
+          <a href="#features">Features</a>
+          <a href="#data">Data</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="shell flash-hero-grid">
+          <div>
+            <div class="flash-lockup">
+              <img src="assets/what-am-i-eating-icon.png" alt="What Am I Eating app icon">
+              <div>
+                <strong>What Am I Eating</strong>
+                <span>Barcode food scanner</span>
+              </div>
+            </div>
+            <div class="eyebrow">Food scanner</div>
+            <h1>Scan the barcode. <span>Understand the food.</span></h1>
+            <p class="hero-copy">
+              What Am I Eating helps make packaged food labels easier to understand. Scan a barcode or enter it manually,
+              then review a clear product score, nutrition context, ingredients, additives, allergens, and missing-data notes.
+            </p>
+            <div class="action-row">
+              <span class="button primary disabled-button" aria-label="Store links coming soon">Store links coming soon</span>
+              <a class="button secondary" href="mailto:info@bigpantsapps.com?subject=What%20Am%20I%20Eating">Contact</a>
+            </div>
+            <div class="hero-facts" aria-label="What Am I Eating facts">
+              <span>Barcode lookup</span>
+              <span>Open Food Facts</span>
+              <span>Transparent scoring</span>
+              <span>Data warnings</span>
+            </div>
+          </div>
+
+          <div class="food-phone-demo" aria-label="What Am I Eating product preview">
+            <div class="food-screen">
+              <div class="phone-status">
+                <span>11:05</span>
+                <span>What Am I Eating</span>
+              </div>
+              <div class="food-preview">
+                <div class="scanner-frame">
+                  <span></span>
+                  <strong>Scan barcode</strong>
+                </div>
+                <div class="score-panel">
+                  <span class="score-dot"></span>
+                  <div>
+                    <strong>Product score</strong>
+                    <p>Based on available product data</p>
+                  </div>
+                </div>
+                <div class="food-card">
+                  <span>Nutrition</span>
+                  <strong>Sugar, salt, fiber, protein</strong>
+                </div>
+                <div class="food-card warning">
+                  <span>Additives & allergens</span>
+                  <strong>Check labels before deciding</strong>
+                </div>
+                <div class="food-card muted">
+                  <span>Data completeness</span>
+                  <strong>Missing fields are called out</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Features</div>
+              <h2>Built for fast food-label clarity</h2>
+            </div>
+            <p class="section-intro">
+              The app focuses on the moment you are holding a packaged food and want a plain-language read on what the label says.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="icon-dot">1</span>
+              <h3>Barcode scanning</h3>
+              <p>Center a packaged-food barcode in the camera frame, or enter the barcode manually when scanning is difficult.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">2</span>
+              <h3>Product scores</h3>
+              <p>Review a simple score with context instead of a mystery grade. The scoring rules are built to be transparent.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">3</span>
+              <h3>Nutrition context</h3>
+              <p>See useful per-product nutrition signals such as sugar, saturated fat, sodium, fiber, protein, and calories.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">4</span>
+              <h3>Ingredients</h3>
+              <p>Read available ingredient text and understand when a product record does not include enough detail.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">5</span>
+              <h3>Additives and allergens</h3>
+              <p>Surface available additive and allergen tags with conservative guidance and reminders to verify the package label.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">6</span>
+              <h3>Recent scans</h3>
+              <p>Keep recent lookups and cached product details on the device so common products are easy to revisit.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="data" class="section band">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Data</div>
+              <h2>Open data, careful claims</h2>
+            </div>
+            <p class="section-intro">
+              What Am I Eating is designed around transparency, attribution, and clear boundaries.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="icon-dot">A</span>
+              <h3>Open Food Facts-backed</h3>
+              <p>Product records are planned around Open Food Facts data imported into our own backend for fast barcode lookup.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">B</span>
+              <h3>Completeness warnings</h3>
+              <p>User-contributed product data can be incomplete or outdated, so the app calls out missing fields and low-confidence results.</p>
+            </article>
+            <article class="feature">
+              <span class="icon-dot">C</span>
+              <h3>Not medical advice</h3>
+              <p>Scores and labels are informational. Allergy, pregnancy, medical, and dietary decisions should be checked against packaging and professional guidance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell two-column">
+          <div>
+            <div class="section-kicker">How it works</div>
+            <h2>Three quick steps</h2>
+          </div>
+          <div class="principles">
+            <div class="principle">
+              <strong>Scan or type the barcode</strong>
+              <p>Use the camera scanner for packaged foods, or manually enter the barcode if the label is bent, small, or hard to read.</p>
+            </div>
+            <div class="principle">
+              <strong>Match against the product database</strong>
+              <p>The app looks up the barcode through our Open Food Facts-backed product database and distinguishes missing products from server errors.</p>
+            </div>
+            <div class="principle">
+              <strong>Review the context</strong>
+              <p>Use the score, nutrition summary, ingredients, additives, allergens, and completeness notes as a starting point for reading the label more clearly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">FAQ</div>
+              <h2>Questions people ask before scanning</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>What is What Am I Eating?</summary>
+              <p>It is a mobile barcode food scanner for packaged foods. It helps explain available product data, including nutrition, ingredients, additives, allergens, a score, and data-completeness warnings.</p>
+            </details>
+            <details>
+              <summary>Where does the product data come from?</summary>
+              <p>The product is built around Open Food Facts data served through our own backend. Open Food Facts is open and user-contributed, so coverage and accuracy can vary.</p>
+            </details>
+            <details>
+              <summary>Is this using Yuka data?</summary>
+              <p>No. What Am I Eating is independent and uses Open Food Facts data with our own scoring approach.</p>
+            </details>
+            <details>
+              <summary>Can product data be missing or inaccurate?</summary>
+              <p>Yes. The app is designed to show when important fields are missing and when a score is based on limited available information.</p>
+            </details>
+            <details>
+              <summary>Does it give medical or nutrition advice?</summary>
+              <p>No. It is informational only. For allergies, medical conditions, pregnancy, strict diets, or other health questions, verify the package and talk with a qualified professional.</p>
+            </details>
+            <details>
+              <summary>Does it show additives and allergens?</summary>
+              <p>Yes, when those tags are available in the product record. Always check the package label before making safety-critical decisions.</p>
+            </details>
+            <details>
+              <summary>What if a product is not found?</summary>
+              <p>The app shows a product-not-found state instead of guessing. Barcode entry is also available when scanning does not work.</p>
+            </details>
+            <details>
+              <summary>Is it a calorie tracker or diet planner?</summary>
+              <p>No. The first version focuses on barcode lookup and product understanding, not meal tracking, diet plans, accounts, or cloud sync.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-row">
+        <div>
+          <strong>Big Pants Apps</strong><br>
+          Small apps. Big usefulness.
+        </div>
+        <div class="footer-links">
+          <a href="index.html#apps">All apps</a>
+          <a href="flash-sign.html">Flash Sign Banner</a>
+          <a href="pregnancy.html">Pregnancy Growth Tracker</a>
+          <a href="blackjack-trainer.html">Blackjack Drill Trainer</a>
+          <a href="mailto:info@bigpantsapps.com?subject=What%20Am%20I%20Eating">info@bigpantsapps.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
