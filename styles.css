@@ -403,6 +403,22 @@ h3 {
   box-shadow: 0 10px 24px rgba(20, 33, 61, 0.18);
 }
 
+.app-icon-link {
+  display: block;
+  width: fit-content;
+  border-radius: 18px;
+}
+
+.app-title-link {
+  text-decoration: none;
+}
+
+.app-title-link:hover,
+.app-title-link:focus-visible {
+  color: var(--cherry);
+  text-decoration: none;
+}
+
 .tag {
   display: inline-flex;
   width: fit-content;
