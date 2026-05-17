@@ -44,50 +44,50 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is What Am I Eating?",
+            "name": "What can I use What Am I Eating for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "What Am I Eating is a mobile barcode food scanner for packaged foods. It helps explain available product data, including a product score, nutrition context, ingredients, additives, allergens, and data-completeness warnings."
+              "text": "What Am I Eating helps you scan packaged food barcodes and get a faster read on the label, including a product score, nutrition context, ingredients, additives, allergens, and notes when data is missing."
             }
           },
           {
             "@type": "Question",
-            "name": "Where does the product data come from?",
+            "name": "Can I scan any food product?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "What Am I Eating is built around Open Food Facts data served through our own backend. Open Food Facts is an open, user-contributed food product database, so records can vary by product and region."
+              "text": "The app is designed for packaged foods with barcodes. Fresh produce, prepared meals, restaurant food, and products without barcode records may not have enough data to show a useful result."
             }
           },
           {
             "@type": "Question",
-            "name": "Is What Am I Eating using Yuka data?",
+            "name": "What does the product score mean?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. What Am I Eating is an independent product scanner. It does not use Yuka data, and its product guidance is based on Open Food Facts data and our own transparent scoring rules."
+              "text": "The score is a quick summary based on available product data, such as nutrition values, ingredients, additives, Nutri-Score, NOVA group, and missing-data confidence. It is meant to help you read the label, not make the decision for you."
             }
           },
           {
             "@type": "Question",
-            "name": "Can product data be missing or inaccurate?",
+            "name": "Why might a product score be missing or uncertain?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Product data can be incomplete, outdated, or user-contributed. The app is designed to show data-completeness warnings and explain when a score is based on limited available information."
+              "text": "Some barcode records are incomplete, outdated, or user-contributed. When important fields are missing, the app is designed to show that clearly instead of pretending the result is more certain than it is."
             }
           },
           {
             "@type": "Question",
-            "name": "Does the app give medical or nutrition advice?",
+            "name": "Can What Am I Eating help with additives?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. What Am I Eating is informational only and is not medical advice. People with allergies, medical conditions, dietary restrictions, pregnancy questions, or other health concerns should verify packaging and talk with a qualified professional."
+              "text": "Yes, when additive tags are available. The app can surface conservative additive guidance, including caution labels, but those labels are informational and do not mean an ingredient is unsafe in every context."
             }
           },
           {
             "@type": "Question",
-            "name": "Does What Am I Eating show additives and allergens?",
+            "name": "Can I use it for allergies?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, when available in the product record. The app can surface additive tags, conservative additive guidance labels, allergen tags, and ingredient text, but users should always check the package label for safety-critical decisions."
+              "text": "The app can show allergen tags when they are available in the product record, but it should not be your only allergy check. Always verify the package label and follow professional guidance for safety-critical food decisions."
             }
           },
           {
@@ -95,23 +95,47 @@
             "name": "What happens if a barcode is not found?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The app shows a product-not-found state instead of guessing. Users can also enter a barcode manually if scanning is difficult."
+              "text": "The app shows a product-not-found state instead of guessing. You can also enter the barcode manually if the camera cannot read the package."
             }
           },
           {
             "@type": "Question",
-            "name": "Is What Am I Eating a calorie tracker or diet planner?",
+            "name": "Does it replace reading the nutrition label?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The first version focuses on barcode lookup and product understanding. Meal tracking, diet plans, accounts, cloud sync, and medical recommendations are outside the MVP scope."
+              "text": "No. What Am I Eating is a companion to the label. It helps summarize and organize product information, but packaging should remain the source of truth, especially for allergens, ingredients, and serving details."
             }
           },
           {
             "@type": "Question",
-            "name": "Does What Am I Eating require an account?",
+            "name": "Is this a calorie counter or diet app?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No account is planned for the MVP. Recent scans, cached product data, and settings are designed to stay local on the device."
+              "text": "No. The first version focuses on barcode lookup and product understanding. It is not a meal tracker, diet planner, weight-loss program, or medical recommendation tool."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the food data come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app is built around Open Food Facts data served through our own backend. Open Food Facts is an open, user-contributed food product database, so coverage and detail can vary by product and region."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is What Am I Eating the same as Yuka?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. What Am I Eating is an independent product scanner. It does not use Yuka data, and its product guidance is based on open food data and our own scoring approach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it save my scan history?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The first version is designed around local recent scans and cached product details so you can revisit products on your device. Accounts and cloud sync are not part of the MVP."
             }
           }
         ]
@@ -302,47 +326,60 @@
       </section>
 
       <section id="faq" class="section">
-        <div class="shell">
-          <div class="section-heading">
-            <div>
-              <div class="section-kicker">FAQ</div>
-              <h2>Questions people ask before scanning</h2>
-            </div>
+        <div class="shell two-column">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>Good to know</h2>
           </div>
-
-          <div class="faq-list">
-            <details>
-              <summary>What is What Am I Eating?</summary>
-              <p>It is a mobile barcode food scanner for packaged foods. It helps explain available product data, including nutrition, ingredients, additives, allergens, a score, and data-completeness warnings.</p>
-            </details>
-            <details>
-              <summary>Where does the product data come from?</summary>
-              <p>The product is built around Open Food Facts data served through our own backend. Open Food Facts is open and user-contributed, so coverage and accuracy can vary.</p>
-            </details>
-            <details>
-              <summary>Is this using Yuka data?</summary>
-              <p>No. What Am I Eating is independent and uses Open Food Facts data with our own scoring approach.</p>
-            </details>
-            <details>
-              <summary>Can product data be missing or inaccurate?</summary>
-              <p>Yes. The app is designed to show when important fields are missing and when a score is based on limited available information.</p>
-            </details>
-            <details>
-              <summary>Does it give medical or nutrition advice?</summary>
-              <p>No. It is informational only. For allergies, medical conditions, pregnancy, strict diets, or other health questions, verify the package and talk with a qualified professional.</p>
-            </details>
-            <details>
-              <summary>Does it show additives and allergens?</summary>
-              <p>Yes, when those tags are available in the product record. Always check the package label before making safety-critical decisions.</p>
-            </details>
-            <details>
-              <summary>What if a product is not found?</summary>
-              <p>The app shows a product-not-found state instead of guessing. Barcode entry is also available when scanning does not work.</p>
-            </details>
-            <details>
-              <summary>Is it a calorie tracker or diet planner?</summary>
-              <p>No. The first version focuses on barcode lookup and product understanding, not meal tracking, diet plans, accounts, or cloud sync.</p>
-            </details>
+          <div class="principles faq-grid">
+            <article class="principle">
+              <strong>What can I use What Am I Eating for?</strong>
+              <p>Use it to scan packaged food barcodes and get a faster read on the label: product score, nutrition context, ingredients, additives, allergens, and missing-data notes.</p>
+            </article>
+            <article class="principle">
+              <strong>Can I scan any food product?</strong>
+              <p>It is designed for packaged foods with barcodes. Fresh produce, prepared meals, restaurant food, and products without barcode records may not have enough data to show a useful result.</p>
+            </article>
+            <article class="principle">
+              <strong>What does the product score mean?</strong>
+              <p>The score is a quick summary based on available product data, such as nutrition values, ingredients, additives, Nutri-Score, NOVA group, and missing-data confidence. It helps you read the label; it does not make the decision for you.</p>
+            </article>
+            <article class="principle">
+              <strong>Why might a product score be missing or uncertain?</strong>
+              <p>Some barcode records are incomplete, outdated, or user-contributed. When important fields are missing, the app is designed to say so clearly.</p>
+            </article>
+            <article class="principle">
+              <strong>Can What Am I Eating help with additives?</strong>
+              <p>Yes, when additive tags are available. The app can surface conservative additive guidance, including caution labels, but those labels are informational and do not mean an ingredient is unsafe in every context.</p>
+            </article>
+            <article class="principle">
+              <strong>Can I use it for allergies?</strong>
+              <p>The app can show allergen tags when they are available in the product record, but it should not be your only allergy check. Always verify the package label and follow professional guidance for safety-critical food decisions.</p>
+            </article>
+            <article class="principle">
+              <strong>What if a product is not found?</strong>
+              <p>The app shows a product-not-found state instead of guessing. You can also enter the barcode manually if the camera cannot read the package.</p>
+            </article>
+            <article class="principle">
+              <strong>Does it replace reading the nutrition label?</strong>
+              <p>No. What Am I Eating is a companion to the label. Packaging should remain the source of truth, especially for allergens, ingredients, and serving details.</p>
+            </article>
+            <article class="principle">
+              <strong>Is this a calorie counter or diet app?</strong>
+              <p>No. The first version focuses on barcode lookup and product understanding. It is not a meal tracker, diet planner, weight-loss program, or medical recommendation tool.</p>
+            </article>
+            <article class="principle">
+              <strong>Where does the food data come from?</strong>
+              <p>The app is built around Open Food Facts data served through our own backend. Open Food Facts is an open, user-contributed food product database, so coverage and detail can vary by product and region.</p>
+            </article>
+            <article class="principle">
+              <strong>Is What Am I Eating the same as Yuka?</strong>
+              <p>No. What Am I Eating is independent. It does not use Yuka data, and its product guidance is based on open food data and our own scoring approach.</p>
+            </article>
+            <article class="principle">
+              <strong>Does it save my scan history?</strong>
+              <p>The first version is designed around local recent scans and cached product details so you can revisit products on your device. Accounts and cloud sync are not part of the MVP.</p>
+            </article>
           </div>
         </div>
       </section>
